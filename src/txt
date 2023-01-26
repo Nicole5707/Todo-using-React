@@ -1,0 +1,259 @@
+button 
+
+// class Button extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       inputValue: '',
+//       todoList: [],
+//     };
+//   }
+
+//   handleInputChange = (e) => {
+//     this.setState({ inputValue: e.target.value });
+//   }
+
+//   handleAddTodo = () => {
+//     if (this.state.inputValue) {
+//       this.setState({
+//         todoList: [...this.state.todoList, { text: this.state.inputValue }],
+//         inputValue: '',
+//       });
+//     }
+//   }
+
+//   handleDelete = (index) => {
+//     const newTodoList = [...this.state.todoList];
+//     newTodoList.splice(index, 1);
+//     this.setState({ todoList: newTodoList });
+//   }
+
+//   handleClick = () => {
+//     if (this.props.buttonType === "delete") {
+//       this.handleDelete(this.props.index);
+//     } else if (this.props.buttonType === "add") {
+//       this.handleAddTodo();
+//     }
+//   }
+
+//   render() {
+//     let buttonText;
+//     if(this.props.buttonType === "delete"){
+//       buttonText = "Delete"
+//     }
+//     else if(this.props.buttonType === "add"){
+//       buttonText = "Add"
+//     }
+//     return (
+//       <button onClick={this.handleClick}>{buttonText}</button>
+//     );
+//   }
+// }
+// class Button extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       todoList: [],
+//     };
+//   }
+
+//   handleAddTodo = () => {
+//     if (this.props.inputValue) {
+//       this.setState(state => {
+//         return {
+//           todoList: [...state.todoList, { text: this.props.inputValue }],
+//         }
+//       });
+//     }
+//   }
+
+//   handleDelete = (index) => {
+//     const newTodoList = [...this.state.todoList];
+//     newTodoList.splice(index, 1);
+//     this.setState({ todoList: newTodoList });
+//   }
+
+//   render() {
+//     let buttonText;
+//     if(this.props.buttonType === "delete"){
+//       buttonText = "Delete"
+//     }
+//     else if(this.props.buttonType === "add"){
+//       buttonText = "Add"
+//     }
+//     else if(this.props.buttonType === "close"){
+//       buttonText = "close"
+//     }
+//     return (
+//       <div>
+//         <button onClick={this.handleAddTodo}>{buttonText}</button>
+//         <ul>
+//           {this.state.todoList.map((todo, index) => (
+//             <TodoItem
+//               key={index}
+//               todo={todo}
+//               index={index}
+//               handleDelete={this.handleDelete}
+//             />
+//           ))}
+//         </ul>
+//       </div>
+//     );
+//   }
+// }
+// export default Button;
+
+input
+
+// class InputTodo extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       inputValue: '',
+//     };
+//   }
+
+//   handleInputChange = (e) => {
+//     this.setState({ inputValue: e.target.value });
+//   }
+
+//   render() {
+//     return (
+//       <div>
+//         <input
+//           type="text"
+//           value={this.state.inputValue}
+//           onChange={this.handleInputChange}
+//         />
+//         <Button
+//           inputValue={this.state.inputValue}
+//         />
+//       </div>
+//     );
+//   }
+// }
+// export default InputTodo;
+
+todoitem
+
+// import Button from './Button';
+// import Checkbox from './Checkbox';
+// class TodoItem extends Component {
+//   render() {
+//     const { todo, index, handleDelete } = this.props;
+//     return (
+//       <li>
+//         <Checkbox isChecked={this.props.isChecked} onCheckboxChange={this.handleCheckboxChange} />
+//         {todo.text}
+//         <Button type="delete" onClick={() => handleDelete(index)} />
+//       </li>
+//     );
+//   }
+// }
+// export default TodoItem;
+// import Button from './Button';
+// import Checkbox from './Checkbox';
+// class TodoItem extends Component {
+//   handleCheckboxChange = (event) => {
+//     // handle the checkbox change here
+//   }
+
+//   render() {
+//     const { todo, index} = this.props;
+//     return (
+//       <li>
+//         <Checkbox onCheckboxChange={this.handleCheckboxChange} />
+//         {todo.text}
+//         <Button buttonType="delete" onClick={() => this.props.handleDelete(index)} />
+//       </li>
+//     );
+//   }
+// }
+// export default TodoItem;
+
+
+
+todoList
+// import React from 'react';
+// import TodoItem from './TodoItem';
+
+// const TodoList = ({ todoList, handleDelete }) => (
+//   <ul>
+//     {todoList.map((todo, index) => (
+//       <TodoItem
+//         key={index}
+//         todo={todo}
+//         index={index}
+//         handleDelete={handleDelete}
+//       />
+//     ))}
+//   </ul>
+// );
+
+// export default TodoList;
+
+
+input again 
+// import React, { Component } from 'react';
+// // import TodoItem from './TodoItem';
+// // import TodoList from './TodoList';
+
+// class InputTodo extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       inputValue: '',
+//       todoList: [],
+//     };
+//   }
+
+//   handleInputChange = (e) => {
+//     this.setState({ inputValue: e.target.value });
+//   }
+
+//   handleAddTodo = () => {
+//     if (this.state.inputValue) {
+//       this.setState({
+//         todoList: [...this.state.todoList, { text: this.state.inputValue }],
+//         inputValue: '',
+//       });
+//     }
+//   }
+
+//   handleDelete = (index) => {
+//     const newTodoList = [...this.state.todoList];
+//     newTodoList.splice(index, 1);
+//     this.setState({ todoList: newTodoList });
+//   }
+
+// render() {
+//     return (
+//       <div>
+//         <input
+//           type="text"
+//           value={this.state.inputValue}
+//           onChange={this.handleInputChange}
+//         />
+//         <button onClick={this.handleAddTodo}>Add</button>
+//       </div>
+//     );
+//   }
+// }
+
+// export default InputTodo;
+
+todocontainer
+
+// function TodoContainer() {
+//     // const link = ['HOME','ABOUT']
+//   return (
+//     <div className="Container">
+//         {/* <Navbar link={["Home", "About"]} /> */}
+//         <Header />
+//         <InputTodo />
+//         <TodoList todoList={this.state.todoList} handleDelete={this.handleDelete} />
+//     </div>
+//   );
+// }
+
+// export default TodoContainer;
