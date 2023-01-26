@@ -1,21 +1,22 @@
 import React from "react";
-import TodoItem from "./TodoItem";
+import TodoItem from "./Common/TodoItem";
+
+const style = {
+  maxHeight: "250px",
+  overflowY: "scroll",
+};
+const styling = {
+  block: {
+    display: "flex",
+    justifyContent: "center",
+    fontSize: "30px",
+    marginRight: "150px",
+    listStyle: 'none',
+  }
+}
 
 const TodoList = ({ todoList, handleDelete }) => {
-  const style = {
-    maxHeight: "250px",
-    overflowY: "scroll",
-  };
-  const styling = {
-    block: {
-      display: "flex",
-      justifyContent: "center",
-      fontSize: "30px",
-      marginRight: "150px",
-    //   backgroundColor: 'red',
-      listStyle: 'none',
-    }
-  }
+  
   return (
     <div style={styling.block}>
       <ul style={todoList.length >= 4 ? style : {}}>

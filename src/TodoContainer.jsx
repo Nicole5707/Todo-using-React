@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Navbar from './Navbar';
-import Header from './Header'; 
-import InputTodo from './InputTodo';
-import TodoList from './TodoList';
+import Navbar from './Components/Common/Navbar';
+import Header from './Components/Header'; 
+import InputTodo from './Components/InputTodo';
+import TodoList from './Components/TodoList';
 
 class Container extends Component {
   constructor(props) {
@@ -18,14 +18,11 @@ class Container extends Component {
   }
 
   handleAddTodo = () => {
-    if (this.state.inputValue) {
       this.setState({
         todoList: [...this.state.todoList, { text: this.state.inputValue }],
+        inputValue: '',
       });
-      this.setState({ inputValue:"" });
     }
-    console.log(this.state)
-  }
 
   handleDelete = (index) => {
     const newTodoList = [...this.state.todoList];
